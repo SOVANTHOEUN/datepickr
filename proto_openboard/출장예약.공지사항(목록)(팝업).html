@@ -1,0 +1,286 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title></title>
+<meta http-equiv="Cache-Control" content="No-Cache">
+<meta http-equiv="Pragma" content="No-Cache">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="title" content="">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<!-- The Open Graph protocol -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="">
+<meta property="og:description" content="">
+<meta property="og:url" content="">
+<meta property="og:image" content="">
+<!-- //The Open Graph protocol -->
+<link rel="SHORTCUT ICON" href="">
+<link rel="stylesheet" href="../css/jquery.mCustomScrollbar.css">
+<link rel="stylesheet" href="../css/reset.css">
+<link rel="stylesheet" href="../css/content.css">
+<link rel="stylesheet" href="../css/flag.css">
+<link rel="stylesheet" href="../css/ob.content.css">
+<script type="text/javascript" src="../js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="../js/jquery.placeholder.min.js"></script>
+<script type="text/javascript" src="../js/slide_slick.js"></script>
+<script type="text/javascript" src="../js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script type="text/javascript" src="../js/collection.fn.1.0.0.js"></script>
+<script type="text/javascript" src="../js/cmd.js"></script>
+<script>
+$(function(){
+	$('input, textarea').placeholder({customClass:'my-placeholder'});
+});
+</script>
+</head>
+
+<body>
+
+<!-- pop_wrap -->
+<div class="pop_wrap" style="width:980px;">
+
+	<!-- 팝업 헤더 -->
+	<div class="pop_head">
+		<h1>공지사항</h1>
+		<a href="#none" onClick="self.close()" class="btn_popclose"><span class="blind">팝업닫기</span></a>
+	</div>
+	<!-- //팝업 헤더 -->
+
+	<!-- 팝업 컨텐츠 -->
+	<div class="pop_container openboard">
+		<!-- hotel search(openboard) -->
+		<div class="hotel_srch_wrap openboard">
+			<div class="hotel_srch_inner cboth tac">
+				<div class="center hotel_srch_control_group openboard">
+					<ul class="cboth">
+						<li>
+							<span class="tx_tit">작성일</span>
+							<div class="cal_srch">
+								<a href="#none" class="date_start">
+									<i class="ic_cal">Calendar</i>
+									<span class="tx_date">2019.10.08</span>
+								</a>
+								<a href="#none" class="date_end">
+									<span class="tx_date">2019.10.08</span>
+								</a>
+							</div>
+						</li>
+						<li class="mgl15">
+							<span class="tx_tit">상세검색</span>
+							<div class="seclect_control type3 openboard" style="width:100px;">
+								<a href="#none" class="js_click select_trigger">내용</a>
+								<div class="js_show seclect_ly" style="display:none;">
+									<ul>
+										<li><a href="#none">내용</a></li>
+										<li><a href="#none">검색</a></li>
+										<li><a href="#none">작성자</a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="autoComplete_ly_wrap openboard" style="width:262px;">
+								<span class="ipt_srch"><input type="text" placeholder="" class="js_click_autoComplete_ipt"></span>
+								<!-- autoComplete_ly -->
+								<div class="js_show_autoComplete autoComplete_ly">
+									<ul>
+										<li class="srchWord_idx_area_none"><a href="#none">검색어 가나다라1</a></li>
+										<li class="srchWord_idx_area_none"><a href="#none">검색어 가나다라2</a></li>
+										<li class="srchWord_idx_area_none"><a href="#none">검색어 가나다라3</a></li>
+									</ul>
+								</div>
+								<!--//autoComplete_ly -->
+							</div>
+						</li>
+						<li><a href="#none" class="btn_blue9 btn_srch">검색</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- //hotel search -->
+
+		<!-- 리스트테이블 -->
+		<div class="cboth">
+			<table class="list_table">
+				<colgroup>
+				<col width="110px">
+				<col>
+				<col width="100px">
+				<col width="106px">
+				<col width="80px">
+				</colgroup>
+				<thead>
+					<tr>
+						<th scope="col" class="firstColumn">
+							말머리
+							<span class="order_control"><a href="#none" name="" class="ic_aOrder_default"><em class="blind">내림차순</em></a></span>
+						</th>
+						<th scope="col">
+							제목
+							<span class="order_control"><a href="#none" name="" class="ic_aOrder_active"><em class="blind">내림차순</em></a></span>
+						</th>
+						<th scope="col" class="tac">
+							작성자
+							<span class="order_control"><a href="#none" name="" class="ic_dOrder_active"><em class="blind">내림차순</em></a></span>
+						</th>
+						<th scope="col" class="tac">
+							작성일
+							<span class="order_control"><a href="#none" name="" class="ic_aOrder_default"><em class="blind">내림차순</em></a></span>
+						</th>
+						<th scope="col" class="tac">
+							첨부
+							<span class="order_control"><a href="#none" name="" class="ic_aOrder_default"><em class="blind">내림차순</em></a></span>
+						</th>
+					</tr>
+				</thead>
+				<tfoot style="display:none;">
+					<tr>
+						<td colspan="5" class="noneList">등록된 내용이 존재하지 않습니다.</td>
+					</tr>
+				</tfoot>
+				<tbody style="display:;">
+					<tr>
+						<td class="firstColumn">가나다라마</td>
+						<td class="subject">
+							<a href="#none"><i class="kPointer">중요</i>남아공, 아프리카 열병 주의 가나다라마바사아자차카타파하</a>
+							<span class="reCount">(999)</span>
+						</td>
+						<td class="tac">관리자</td>
+						<td class="tac">2019-05-16</td>
+						<td class="tac">
+							<a href="#none"><img src="../img/ob/ic_file.png" alt="첨부파일" class="vam"></a>
+							<!-- folder_manage layer -->
+							<div class="layerstyle1" style="display:none;border-top:none;top:23px;right:0;">
+								<div class="layerstyle1_po" style="margin-top:10px;border-top:3px solid #32a1dd;">
+									<span class="tail" style="top:-8px;right:35px;"></span>
+									<div class="layerstyle1_cont">
+										<ul class="file_list">
+											<li><a href="#none"><span>플랫폼소개자료플랫폼소개자료플랫폼소개자료</span>.pptx</a></li>
+											<li><a href="#none"><span>플랫폼계약서2020-01</span>.dox</a></li>
+											<li><a href="#none"><span>플랫폼소개자2020-01</span>.pptx</a></li>
+											<li><a href="#none"><span>플랫폼계약서2020-02</span>.dox</a></li>
+											<li><a href="#none"><span>플랫폼소개자료</span>.pptx</a></li>
+										</ul>
+										<div class="lp_btn_wrap">
+											<a href="#none" class="filedown">전체파일다운로드</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- //folder_manage layer -->
+						</td>
+					</tr>
+					<tr>
+						<td class="firstColumn">가나다라마</td>
+						<td class="subject">
+							<a href="#none"><i class="kPointer">중요</i>한국조세재정연구원 세무사 자격소지자 우대 채용 안내</a>
+							<span class="reCount">(999)</span>
+						</td>
+						<td class="tac">관리자</td>
+						<td class="tac">2019-05-16</td>
+						<td class="tac">
+							<a href="#none"><img src="../img/ob/ic_file.png" alt="첨부파일" class="vam"></a>
+							<!-- folder_manage layer -->
+							<div class="layerstyle1" style="display:;border-top:none;top:23px;right:0;">
+								<div class="layerstyle1_po" style="margin-top:10px;border-top:3px solid #32a1dd;">
+									<span class="tail" style="top:-8px;right:35px;"></span>
+									<div class="layerstyle1_cont">
+										<ul class="file_list">
+											<li><a href="#none"><span>플랫폼소개자료플랫폼소개자료플랫폼소개자료</span>.pptx</a></li>
+											<li><a href="#none"><span>플랫폼계약서2020-01</span>.dox</a></li>
+											<li><a href="#none"><span>플랫폼소개자2020-01</span>.pptx</a></li>
+											<li><a href="#none"><span>플랫폼계약서2020-02</span>.dox</a></li>
+											<li><a href="#none"><span>플랫폼소개자료</span>.pptx</a></li>
+										</ul>
+										<div class="lp_btn_wrap">
+											<a href="#none" class="filedown">전체파일다운로드</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- //folder_manage layer -->
+						</td>
+					</tr>
+					<tr>
+						<td class="firstColumn">가나다라마</td>
+						<td class="subject"><a href="#none"><span class="icon_i">중요</span>한국조세재정연구원 세무사 자격소지자 우대 채용 안내</a></td>
+						<td class="tac">관리자</td>
+						<td class="tac">2020-05-00</td>
+						<td class="tac"></td>
+					</tr>
+					<tr>
+						<td class="firstColumn">가나다라마</td>
+						<td class="subject"><a href="#none">가나다라마바사아자차카타파하</a></td>
+						<td class="tac">가나다라마</td>
+						<td class="tac">2020-05-00</td>
+						<td class="tac"></td>
+					</tr>
+					<tr>
+						<td class="firstColumn">가나다라마</td>
+						<td class="subject"><a href="#none">가나다라마바사아자차카타파하</a></td>
+						<td class="tac">가나다라마</td>
+						<td class="tac">2020-05-00</td>
+						<td class="tac"></td>
+					</tr>
+					<tr>
+						<td class="firstColumn">가나다라마</td>
+						<td class="subject"><a href="#none">가나다라마바사아자차카타파하</a></td>
+						<td class="tac">가나다라마</td>
+						<td class="tac">2020-05-00</td>
+						<td class="tac"></td>
+					</tr>
+					<tr>
+						<td class="firstColumn">가나다라마</td>
+						<td class="subject"><a href="#none">가나다라마바사아자차카타파하</a></td>
+						<td class="tac">가나다라마</td>
+						<td class="tac">2020-05-00</td>
+						<td class="tac"></td>
+					</tr>
+					<tr>
+						<td class="firstColumn">가나다라마</td>
+						<td class="subject"><a href="#none">가나다라마바사아자차카타파하</a></td>
+						<td class="tac">가나다라마</td>
+						<td class="tac">2020-05-00</td>
+						<td class="tac"></td>
+					</tr>
+					<tr>
+						<td class="firstColumn">가나다라마</td>
+						<td class="subject"><a href="#none">가나다라마바사아자차카타파하</a></td>
+						<td class="tac">가나다라마</td>
+						<td class="tac">2020-05-00</td>
+						<td class="tac"></td>
+					</tr>
+					<tr>
+						<td class="firstColumn">가나다라마</td>
+						<td class="subject"><a href="#none">가나다라마바사아자차카타파하</a></td>
+						<td class="tac">가나다라마</td>
+						<td class="tac">2020-05-00</td>
+						<td class="tac"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<!-- //리스트테이블 -->
+
+		<!-- 하단 페이징/버튼 -->
+		<div class="paging type2 openboard">
+			<div class="paging_inner">
+				<a href="#none" class="paging_first">Prev</a>
+				<span class="paging_num">
+					<a href="#none" class="on">1</a>
+					<a href="#none">2</a>
+					<a href="#none">3</a>
+					<a href="#none">4</a>
+					<a href="#none">5</a>
+				</span>
+				<a href="#none" class="paging_next">Next</a>
+			</div>
+		</div>
+		<!-- //하단 페이징/버튼 -->
+	</div>
+	<!-- //팝업 컨텐츠 -->
+
+</div>
+<!-- //pop_wrap -->
+
+</body>
+</html>
