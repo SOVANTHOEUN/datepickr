@@ -88,12 +88,12 @@
  	width:500px !important;
  }
  .flatpickr-calendar.hasTime.rangeMode.animate.multiMonth.open.arrowTop{
-    top: 16.2% !important;/*224px*/
- 	left:44.3% !important;
+    /* top: 16.2% !important;
+ 	left:44.3% !important; */
  }
  .flatpickr-calendar.hasTime.animate.multiMonth.open.arrowTop{
- 	left:15px !important;
- 	top: 224px;
+ 	/* left:15px !important;
+ 	top: 224px; */
  	/* top: 255px !important; */
  }
  .dayContainer{
