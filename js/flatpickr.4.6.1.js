@@ -1056,7 +1056,6 @@
                 bind(window.document, "mousedown", onClick(documentClick));
             bind(window.document, "focus", documentClick, { capture: true });
             if (self.config.clickOpens === true) {
-                console.log("bindEvent start: " + self.isOpen);
                 bind(self._input, "focus", self.open);
                 // bind(self._input, "mousedown", onClick(self.open));
             }
@@ -1127,7 +1126,6 @@
                 $("#" + target).flatpickr(JSON.parse(JSON.stringify(opt)));
                 $("#" + target).focus();
             }
-            console.log("bindEvent finish: " + self.isOpen);
         }
 
         /**
@@ -1766,7 +1764,6 @@
             return self.calendarContainer.contains(elem);
         }
         function documentClick(e) {
-            console.log("documentClick: " + self.isOpen);
             if (self.isOpen && !self.config.inline) {
                 var eventTarget_1 = getEventTarget(e);
                 var isCalendarElement = isCalendarElem(eventTarget_1);
@@ -2102,9 +2099,7 @@
             //if (self._input.disabled || self.config.inline)
             //return;
             var wasOpen = self.isOpen;
-            console.log("self.isOpen1: " + self.isOpen);
             self.isOpen = true;
-            console.log("self.isOpen2: " + self.isOpen);
             if (!wasOpen) {
                 self.calendarContainer.classList.add("open");
                 self._input.classList.add("active");
@@ -2646,7 +2641,7 @@
             });
         }
         function toggle(e) {
-            console.log("toggle self.isOpen: " + self.isOpen);
+            console.log("class open: ", $(".flatpickr-calendar.hasTime").hasClass("open"));
             if (self.isOpen === true)
                 return self.close();
             self.open(e);
