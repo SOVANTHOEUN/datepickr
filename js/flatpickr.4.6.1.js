@@ -966,6 +966,8 @@
          * @param {Function} handler the event handler
          */
         function bind(element, event, handler, options) {
+            console.log("number clicked event: " + event);
+
             if (event instanceof Array)
                 return event.forEach(function (ev) { return bind(element, ev, handler, options); });
             if (element instanceof Array)
@@ -991,6 +993,7 @@
             };
         }
         function triggerChange() {
+            console.log("triggerChange called.")
             triggerEvent("onChange");
         }
         /**
@@ -2292,6 +2295,12 @@
                 (configPosHorizontal != null && configPosHorizontal === "center"
                     ? (calendarWidth - inputBounds.width) / 2
                     : 0);
+            console.log("calendar position 1: " + window.pageXOffset);
+            console.log("calendar position 2: " + inputBounds.left);
+            console.log("calendar position 3: " + configPosHorizontal);
+            console.log("calendar position 4: " + calendarWidth);
+            console.log("calendar position 5: " + inputBounds.width);
+
             var right = window.document.body.offsetWidth - inputBounds.right;
             var rightMost = left + calendarWidth > window.document.body.offsetWidth;
             var centerMost = right + calendarWidth > window.document.body.offsetWidth;

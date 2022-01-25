@@ -17,7 +17,6 @@ function checkDate() {
     var _dayNames = ['일', '월', '화', '수', '목', '금', '토'];
     setTimeout(function () {
         $(".cal_srch").css("border", "1px solid #0867c5");
-        console.log("check date class: " + $(".flatpickr-calendar.hasTime").hasClass("open"));
         if (!$(".flatpickr-calendar.hasTime").hasClass("open")) {
             $(".cal_srch").flatpickr({
                 mode: "range"
@@ -25,17 +24,18 @@ function checkDate() {
                 , dateFormat: "Y-m-d"
                 , locale: "ko"
                 , minDate: "today"
-                , defaultDate: [$("#checkin").html(), $("#checkout").html()] // [new Date(), new Date().fp_incr(1)]
+                , defaultDate: [$("#checkin").html(), $("#checkout").html()]
                 , onChange: [function (selectedDates) {
+                    console.log("number parent onChanged");
+
                     var _this = this;
                     var dateArr = selectedDates.map(function (date) {
                         return _this.formatDate(date, 'Y.m.d');
                     });
 
-                    // $(".startRange").prevAll().addClass("flatpickr-disabled");
                     $(".today").prevAll().addClass("flatpickr-disabled");
                     $(".startRange").next().addClass("default-selected");
-                    $(".startRange").addClass("disabled"); //Make startRange can't click again
+                    $(".startRange").addClass("disabled");
 
                     var fstartDate = _dayNames[new Date(dateArr[0].replace(/[.]/g, "-")).getDay()];
                     var fStartDate = dateArr[0].replace(/[.]/g, "-");
@@ -81,9 +81,6 @@ function checkDate() {
                         $("#checkout").attr("data-value", fiEndDate);
                         $("#PLAN_END_DT").val(fiEndDate);
                     }
-                    // if($(".FLATPICKR-DAYS .DAYCONTAINER").LAST().CHILDREN("SPAN").HASCLASS("STARTRANGE")){
-                    //		$(".FLATPICKR-DAYS .DAYCONTAINER").FIRST().CHILDREN("SPAN").ADDCLASS("FLATPICKR-DISABLED");
-                    // }
                 }]
                 , onClose: function (selectedDates) {
                     var _this = this;
@@ -96,13 +93,8 @@ function checkDate() {
                 }
             }).open();
         } else {
-            $(".cal_srch").flatpickr({}).close();
+            $(".cal_srch").flatpickr().close();
+            $(".cal_srch").css("border", "1px solid #bacadb");
         }
-
-
-        // var newTop = $(".cal_srch").offset().top + $(".cal_srch").height() + 4;
-        // var newLeft = $(".cal_srch").offset().left;
-        // $(".flatpickr-calendar.hasTime").css("top", newTop + "px");
-        // $(".flatpickr-calendar.hasTime").css("left", newLeft + "px");
     }, 50);
 }
