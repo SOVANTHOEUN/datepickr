@@ -898,9 +898,13 @@
         if (!_this.current) {
           $target.addClass('current');
           var inputVal = moment().set({ 'year': year, 'month': month, 'date': date }).format(_this.picker.config.format.split(' ')[0]);
+          console.log("date::: " + moment().set({ 'year': year, 'month': month, 'date': date }));
+
+
           $day.val(inputVal);
           $time.eq(0).val(_this.picker.timeMin);
           $time.eq(1).val(_this.picker.timeMax);
+          _this.picker.$inputBegin.val(inputVal);
           _this.current = 1;
         } else if (_this.current == 1) {
           // 选完两个
@@ -920,7 +924,8 @@
             _this.current = 2;
             _this.picker.$inputBegin.val(existDate);
             _this.picker.$inputEnd.val(inputVal);
-            _this.picker.datePickerObject.hide('choose');
+            // sovanthoeun-commented
+            // _this.picker.datePickerObject.hide('choose');
           } else {
             // 有十分秒，则选添加选择范围样式
             if (b.diff(a) < 0) {
@@ -3111,11 +3116,15 @@
   function rederSidebar(_this) {
     var html = '';
     var options = _this.config.shortcutOptions;
-    for (var i = 0; i < options.length; i++) {
-      var time = options[i].time || '';
-      html += RENDERAPI.sideBarButton(options[i].day, time, options[i].name);
+    if (options.length > 0) {
+      for (var i = 0; i < options.length; i++) {
+        var time = options[i].time || '';
+        html += RENDERAPI.sideBarButton(options[i].day, time, options[i].name);
+      }
+      return RENDERAPI.sideBarTpl(html);
+    } else {
+      return html;
     }
-    return RENDERAPI.sideBarTpl(html);
   }
 
   // 设置选中值
