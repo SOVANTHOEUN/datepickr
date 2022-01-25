@@ -898,13 +898,12 @@
         if (!_this.current) {
           $target.addClass('current');
           var inputVal = moment().set({ 'year': year, 'month': month, 'date': date }).format(_this.picker.config.format.split(' ')[0]);
-          console.log("date::: " + moment().set({ 'year': year, 'month': month, 'date': date }));
-
-
+          var inputNextVal = moment().set({ 'year': year, 'month': month, 'date': (Number(date) + 1) }).format(_this.picker.config.format.split(' ')[0]);
           $day.val(inputVal);
           $time.eq(0).val(_this.picker.timeMin);
           $time.eq(1).val(_this.picker.timeMax);
           _this.picker.$inputBegin.val(inputVal);
+          _this.picker.$inputEnd.val(inputNextVal);
           _this.current = 1;
         } else if (_this.current == 1) {
           // 选完两个
@@ -2587,10 +2586,16 @@
           _this.datePickerObject.hide('confirm');
           return;
         }
+        console.log("days: " + $("body").append("<div class='test with me'>" + $days + "</div>"));
         if (_this.hasTime) {
           start += ' ' + $times.eq(0).val();
           end += ' ' + $times.eq(1).val();
+          console.log("inside start: " + start);
+          console.log("inside end: " + end);
         }
+        console.log("outside start: " + start);
+        console.log("outside end: " + end);
+
         _this.$inputBegin.val(start);
         _this.$inputEnd.val(end);
         _this.datePickerObject.hide('confirm');
