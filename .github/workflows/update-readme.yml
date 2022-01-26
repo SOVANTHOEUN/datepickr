@@ -6,6 +6,7 @@ jobs:
     name: Update this repo's README with recent activity
     steps:
       - uses: actions/checkout@master
+      - uses: actions/datepickr@master
       - uses: SOVANTHOEUN/datepickr@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
