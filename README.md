@@ -1,1 +1,1 @@
-# flatpickr
+# datepickr
