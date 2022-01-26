@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Update this repo's README with recent activity
     steps:
-      - uses: actions/checkout
+      - uses: actions/checkout@v1
       - uses: SOVANTHOEUN/datepickr
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
