@@ -9,6 +9,7 @@ jobs:
       - uses: actions/setup-node@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          COVERALLS_GIT_BRANCH: $GITHUB_REF
         with:
           COMMIT_MSG: "Updated README with recent activity"
           MAX_LINES: 10
