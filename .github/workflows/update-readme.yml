@@ -7,7 +7,7 @@ jobs:
     steps:
       - uses: actions/checkout
         name: Checkout
-      - uses: SOVANTHOEUN/datepickr@dev
+      - uses: https://github.com/SOVANTHOEUN/datepickr.git
         name: TEST
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
