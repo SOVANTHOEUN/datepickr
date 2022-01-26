@@ -5,9 +5,9 @@ jobs:
     runs-on: ubuntu-latest
     name: Update this repo's README with recent activity
     steps:
-      - uses: actions/checkout
+      - uses: actions/checkout@dev
         name: Checkout
-      - uses: actions/datepickr@dev
+      - uses: ./.github/actions/datepickr@master
         name: TEST
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
