@@ -126,3 +126,37 @@ Date: Wed, 26 Jan 2022 08:25:46 GMT
 [2022-01-26 08:25:47Z INFO Terminal] WRITE LINE: Current runner version: '2.286.1'
 [2022-01-26 08:25:47Z INFO Terminal] WRITE LINE: 2022-01-26 08:25:47Z: Listening for Jobs
 [2022-01-26 08:25:47Z INFO JobDispatcher] Set runner/worker IPC timeout to 30 seconds.
+[2022-01-26 08:27:19Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Users\SOVANTHOEUN\Desktop\GIT Workspace\datepickr\actions-runner\.credentials_rsaparams
+[2022-01-26 08:27:19Z INFO MessageListener] Message '1' received from session '561d9e39-200f-4534-8270-244b953415c3'.
+[2022-01-26 08:27:19Z INFO JobDispatcher] Job request 1 for plan 586ff023-260e-462f-9107-cbe87c71fd93 job ca395085-040a-526b-2ce8-bdc85f692774 received.
+[2022-01-26 08:27:19Z INFO JobDispatcher] Pull OrchestrationId 586ff023-260e-462f-9107-cbe87c71fd93.build.__default from JWT claims
+[2022-01-26 08:27:19Z INFO Terminal] WRITE LINE: 2022-01-26 08:27:19Z: Running job: Update this repo's README with recent activity
+[2022-01-26 08:27:19Z INFO JobDispatcher] Start renew job request 1 for job ca395085-040a-526b-2ce8-bdc85f692774.
+[2022-01-26 08:27:19Z INFO JobDispatcher] Successfully renew job request 1, job is valid till 2022-01-26 오전 8:37:19
+[2022-01-26 08:27:19Z INFO HostContext] Well known directory 'Bin': 'C:\Users\SOVANTHOEUN\Desktop\GIT Workspace\datepickr\actions-runner\bin'
+[2022-01-26 08:27:19Z INFO ProcessInvokerWrapper] Starting process:
+[2022-01-26 08:27:19Z INFO ProcessInvokerWrapper]   File name: 'C:\Users\SOVANTHOEUN\Desktop\GIT Workspace\datepickr\actions-runner\bin\Runner.Worker.exe'
+[2022-01-26 08:27:19Z INFO ProcessInvokerWrapper]   Arguments: 'spawnclient 2532 2544'
+[2022-01-26 08:27:19Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\SOVANTHOEUN\Desktop\GIT Workspace\datepickr\actions-runner\bin'
+[2022-01-26 08:27:19Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2022-01-26 08:27:19Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2022-01-26 08:27:19Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'True'
+[2022-01-26 08:27:19Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2022-01-26 08:27:19Z INFO ProcessInvokerWrapper]   Persist current code page: 'False'
+[2022-01-26 08:27:19Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2022-01-26 08:27:19Z INFO ProcessInvokerWrapper]   High priority process: 'True'
+[2022-01-26 08:27:19Z INFO ProcessInvokerWrapper] Process started with process id 10792, waiting for process exit.
+[2022-01-26 08:27:19Z INFO JobDispatcher] Send job request message to worker for job ca395085-040a-526b-2ce8-bdc85f692774.
+[2022-01-26 08:27:19Z INFO ProcessChannel] Sending message of length 20315, with hash 'b296a540735097d20e9781f2c8d01fab806ad8a639bee63e5906c0f9d0b878f8'
+[2022-01-26 08:27:20Z INFO JobNotification] Entering JobStarted Notification
+[2022-01-26 08:27:20Z INFO JobNotification] Entering StartMonitor
+[2022-01-26 08:28:00Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2022-01-26 08:28:00Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2022-01-26 08:28:00Z INFO ProcessInvokerWrapper] Finished process 10792 with exit code 102, and elapsed time 00:00:40.5973759.
+[2022-01-26 08:28:00Z INFO JobDispatcher] Worker finished for job ca395085-040a-526b-2ce8-bdc85f692774. Code: 102
+[2022-01-26 08:28:00Z INFO JobDispatcher] finish job request for job ca395085-040a-526b-2ce8-bdc85f692774 with result: Failed
+[2022-01-26 08:28:00Z INFO Terminal] WRITE LINE: 2022-01-26 08:28:00Z: Job Update this repo's README with recent activity completed with result: Failed
+[2022-01-26 08:28:00Z INFO JobDispatcher] Stop renew job request for job ca395085-040a-526b-2ce8-bdc85f692774.
+[2022-01-26 08:28:00Z INFO JobDispatcher] job renew has been canceled, stop renew job request 1.
+[2022-01-26 08:28:00Z INFO JobNotification] Entering JobCompleted Notification
+[2022-01-26 08:28:00Z INFO JobNotification] Entering EndMonitor

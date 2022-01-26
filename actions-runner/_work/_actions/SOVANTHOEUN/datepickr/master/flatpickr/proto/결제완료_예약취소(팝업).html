@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title></title>
+<meta http-equiv="Cache-Control" content="No-Cache">
+<meta http-equiv="Pragma" content="No-Cache">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="title" content="">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<!-- The Open Graph protocol -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="">
+<meta property="og:description" content="">
+<meta property="og:url" content="">
+<meta property="og:image" content="">
+<!-- //The Open Graph protocol -->
+<link rel="SHORTCUT ICON" href="">
+<link rel="stylesheet" href="../css/jquery.mCustomScrollbar.css">
+<link rel="stylesheet" href="../css/reset.css">
+<link rel="stylesheet" href="../css/content.css">
+<link rel="stylesheet" href="../css/flag.css">
+<script type="text/javascript" src="../js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="../js/jquery.placeholder.min.js"></script>
+<script type="text/javascript" src="../js/slide_slick.js"></script>
+<script type="text/javascript" src="../js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script type="text/javascript" src="../js/collection.fn.1.0.0.js"></script>
+<script type="text/javascript" src="../js/cmd.js"></script>
+<script>
+$(function(){
+	$('input, textarea').placeholder({customClass:'my-placeholder'});
+});
+</script>
+</head>
+
+<body>
+
+<!-- pop_wrap -->
+<div class="pop_wrap" style="width:358px;">
+
+	<!-- 팝업 헤더 -->
+	<div class="pop_head">
+		<h1>예약취소</h1>
+		<a href="#none" onClick="self.close()" class="btn_popclose"><span class="blind">팝업닫기</span></a>
+	</div>
+	<!-- //팝업 헤더 -->
+
+	<!-- 팝업 컨텐츠 -->
+	<div class="pop_container">
+		<div class="cancel_reservation_wrap">
+			<div class="cancel_reservation_info">
+				<dl class="cboth">
+					<dt>취소 예약건</dt>
+					<dd class="frt">n10021 예약건</dd><!-- (modify)20200618 -->
+				</dl>
+
+				<dl class="block">
+					<dt>취소 사유</dt>
+					<dd>
+						<p class="txNote_cancel_reservation">취소요청을 처리하기 위해 필요한 정보입니다.</p>
+					</dd>
+					<dd>
+						<ul>
+							<li><label for=""><input type="radio"><span>일정 또는 여행지 변경</span></label></li>
+							<li><label for=""><input type="radio"><span>개인사유 /여행이 취소됨</span></label></li>
+							<li><label for=""><input type="radio"><span>여행 인원 또는 필요한 사항이 변경됨</span></label></li>
+							<li><label for=""><input type="radio"><span>중복예약으로 인한 예약취소</span></label></li>
+							<li><label for=""><input type="radio"><span>대체 숙소를 찾음</span></label></li>
+							<li><label for=""><input type="radio" checked="checked"><span>기타(직접입력)</span></label></li>
+							<li><input type="text" value="" placeholder="" style="width:230px;margin:5px 0 0 24px;"></li>
+							<li><input type="text" value="" placeholder="" disabled class="yDisable" style="width:230px;margin:5px 0 0 24px;"></li>
+						</ul>
+					</dd>
+				</dl>
+				<!-- (add)202103DD -->
+				<dl class="block">
+					<dd>
+						<p class="txNote_cancel_reservation tx_rPhrase tx_red">※ 결제 금액이 전체취소되며, 취소수수료에 대해서는 결재결제가 진행됩니다.</p>
+					</dd>
+				</dl>
+				<!-- //(add)202103DD -->
+
+				<!-- (add)20200618 -->
+				<dl class="cboth">
+					<dt>환불금액</dt>
+					<dd class="frt">100,000,000,000,000 KRW</dd>
+				</dl>
+				<!-- //(add)20200618 -->
+			</div>
+		</div>
+
+		<div class="btnPop_wrap">
+			<a href="#none" class="btn_blue7">예약취소</a>
+		</div>
+	</div>
+	<!-- //팝업 컨텐츠 -->
+
+</div>
+<!-- //pop_wrap -->
+
+</body>
+</html>

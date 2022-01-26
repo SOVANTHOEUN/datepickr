@@ -1,0 +1,12 @@
+﻿{
+  "repositoryName": "SOVANTHOEUN/datepickr",
+  "pipelineDirectory": "datepickr",
+  "workspaceDirectory": "datepickr\\datepickr",
+  "repositories": {
+    "SOVANTHOEUN/datepickr": {
+      "repositoryPath": "datepickr\\datepickr",
+      "lastRunOn": "01/26/2022 17:27:22 +09:00"
+    }
+  },
+  "lastRunOn": "01/26/2022 17:27:22 +09:00"
+}
