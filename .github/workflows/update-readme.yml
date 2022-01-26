@@ -6,11 +6,11 @@ jobs:
     name: Update this repo's README with recent activity
     steps:
       - uses: actions/checkout@master
-      - uses: actions/SOVANTHOEUN/datepickr@master
+      - uses: SOVANTHOEUN/datepickr@master
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
-          COVERALLS_GIT_BRANCH: ${{ github.ref }}
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+          COVERALLS_REPO_TOKEN: "${{ secrets.COVERALLS_REPO_TOKEN }}"
+          COVERALLS_GIT_BRANCH: "${{ github.ref }}"
         with:
           COMMIT_MSG: "Updated README with recent activity"
           MAX_LINES: 10
