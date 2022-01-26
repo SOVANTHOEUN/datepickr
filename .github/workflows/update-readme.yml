@@ -5,10 +5,8 @@ jobs:
     runs-on: ubuntu-latest
     name: Update this repo's README with recent activity
     steps:
-      - uses: update-readme/checkout@master
-        name: Checkout
+      - uses: actions/checkout@master
       - uses: SOVANTHOEUN/datepickr@master
-        name: Test
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
