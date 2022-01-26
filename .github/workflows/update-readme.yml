@@ -10,5 +10,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
+          fetch-depth: 0
+          repository: SOVANTHOEUN/datepickr
           COMMIT_MSG: "Updated README with recent activity"
           MAX_LINES: 10
