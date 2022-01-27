@@ -899,7 +899,8 @@
           $target.addClass('current');
           var inputVal = moment().set({ 'year': year, 'month': month, 'date': date }).format(_this.picker.config.format.split(' ')[0]);
           var inputNextVal = moment().set({ 'year': year, 'month': month, 'date': (Number(date) + 1) }).format(_this.picker.config.format.split(' ')[0]);
-          $day.val(inputVal);
+          $day.eq(0).val(inputVal);
+          $day.eq(1).val(inputNextVal);
           $time.eq(0).val(_this.picker.timeMin);
           $time.eq(1).val(_this.picker.timeMax);
           _this.picker.$inputBegin.text(inputVal);
@@ -912,6 +913,7 @@
           var inputVal = moment().set({ 'year': year, 'month': month, 'date': date }).format(_this.picker.config.format.split(' ')[0]);
           var a = moment(API.newDateFixed(_this.picker, existDate));
           var b = moment(API.newDateFixed(_this.picker, inputVal));
+          $day.eq(1).val(inputVal);
           // 比初选的小，交换
           if (!_this.picker.hasTime) {
             // 没有十分秒，则选完就隐藏时间插件，并赋值输入框
@@ -1288,9 +1290,12 @@
       // 选中的都在
       // 同一个
       if ($start.is($end)) {
+        console.log("called me 1")
         $start.addClass('in-range');
         return;
       } else if ($current.length === 2) {
+        console.log("called me 2")
+
         var $startTr = $start.parents('tr');
         var $endTr = $end.parents('tr');
         // 同一页
@@ -1329,6 +1334,8 @@
         $startTr.nextAll('tr').find('td.available').addClass('in-range');
         $endTr.prevAll('tr').find('td.available').addClass('in-range');
       } else if ($start.length) {
+        console.log("called me 3")
+
         // 只有开始选中
         var $startTr = $start.parents('tr');
         $start.nextAll('td.available').addClass('in-range');
@@ -1337,6 +1344,8 @@
           $wrap.eq(1).find('td.available').addClass('in-range');
         }
       } else if ($end.length) {
+        console.log("called me 4")
+
         // 只有结束选中
         var $endTr = $end.parents('tr');
         $end.prevAll('td.available').addClass('in-range');
@@ -1344,9 +1353,10 @@
         if (index === 1) {
           $wrap.eq(0).find('td.available').addClass('in-range');
         }
-      } else {
-        $wrap.find('td.available').addClass('in-range');
       }
+      //  else {
+      //   $wrap.find('td.available').addClass('in-range');
+      // }
     }
   });
   /*==============END DAY============*/
@@ -2125,7 +2135,7 @@
   function SingleDatePicker(datePickerObject) {
     this.datePickerObject = datePickerObject;
     this.datePickerObject.pickerObject = null;
-    this.$input = datePickerObject.$target.find('input');
+    this.$input = datePickerObject.$target.find('span');
     this.config = datePickerObject.config;
     this.params = {};
     this.language = this.config.language || 'zh-CN';
@@ -2439,7 +2449,7 @@
   function RangeDatePicker(datePickerObject) {
     this.datePickerObject = datePickerObject;
     this.datePickerObject.pickerObject = null;
-    this.$input = datePickerObject.$target.find('input');
+    this.$input = datePickerObject.$target.find('span');
     this.$inputBegin = this.$input.eq(0);
     this.$inputEnd = this.$input.eq(1);
     this.config = datePickerObject.config;
@@ -2590,6 +2600,8 @@
           start += ' ' + $times.eq(0).val();
           end += ' ' + $times.eq(1).val();
         }
+        console.log("start: " + start);
+        console.log("end: " + end);
 
         _this.$inputBegin.text(start);
         _this.$inputEnd.text(end);

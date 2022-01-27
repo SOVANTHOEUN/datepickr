@@ -50,7 +50,8 @@ a {
     box-sizing: border-box;
     width: 296px;
     position: absolute;
-    z-index: 2001
+    /* z-index: 2001 */
+    z-index: 99999;
 }
 
 .c-datepicker-picker *:before,

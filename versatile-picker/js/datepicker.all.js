@@ -1288,7 +1288,6 @@
       // 选中的都在
       // 同一个
       if ($start.is($end)) {
-        $start.addClass('in-range');
         return;
       } else if ($current.length === 2) {
         var $startTr = $start.parents('tr');

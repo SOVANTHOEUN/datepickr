@@ -584,14 +584,43 @@
 	<script type="text/javascript" src="../js/datepicker.all.js"></script>
 	<script>
 		$(document).ready(function () {
+			getCurrentDate();
 			$('.cal_srch').datePicker({
 				hasShortcut: true,
-				// language: 'zh-CN',
 				language: 'ko',
-				format: 'YYYY-MM-DD',
+				format: 'YYYY.MM.DD',
 				isRange: true
 			});
 		});
+
+		function getCurrentDate() {
+			var _dayNames = ['일', '월', '화', '수', '목', '금', '토'];
+			var d = new Date();
+			var month = d.getMonth() + 1;
+			var day = d.getDate();
+			var today = d.getFullYear() + '.' + (('' + month).length < 2 ? '0' : '') + month + '.' + (('' + day).length < 2 ?
+				'0' : '') + day;
+			var defaultToday = today.replace(/[.]/g, "-");
+			var tname = new Date(defaultToday);
+			var ftname = _dayNames[tname.getDay()];
+			// $("#checkin").text(today + "(" + common.app.null2void(ftname) + ")");
+			$("#checkin").text(today);
+			$("#checkin").attr("data-value", defaultToday);
+
+			var tomorrow = new Date(d)
+			tomorrow.setDate(tomorrow.getDate() + 1);
+			var nday = tomorrow.getDate();
+			//tomorrow.setMonth(tomorrow.getMonth() + 1);
+			var nmonth = tomorrow.getMonth() + 1;
+			var nextDay = tomorrow.getFullYear() + '.' + (('' + nmonth).length < 2 ? '0' : '') + nmonth + '.' + (('' + nday)
+				.length < 2 ? '0' : '') + nday;
+			var defaultNextDay = nextDay.replace(/[.]/g, "-");
+			var nname = new Date(defaultNextDay);
+			var fnname = _dayNames[nname.getDay()];
+			// $("#checkout").text(nextDay + "(" + common.app.null2void(fnname) + ")");
+			$("#checkout").text(nextDay);
+			$("#checkout").attr("data-value", defaultNextDay);
+		}
 	</script>
 
 </body>
