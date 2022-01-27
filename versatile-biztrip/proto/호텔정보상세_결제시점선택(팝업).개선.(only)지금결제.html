@@ -1,0 +1,156 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title></title>
+<meta http-equiv="Cache-Control" content="No-Cache">
+<meta http-equiv="Pragma" content="No-Cache">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="title" content="">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<!-- The Open Graph protocol -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="">
+<meta property="og:description" content="">
+<meta property="og:url" content="">
+<meta property="og:image" content="">
+<!-- //The Open Graph protocol -->
+<link rel="SHORTCUT ICON" href="">
+<link rel="stylesheet" href="../css/jquery.mCustomScrollbar.css">
+<link rel="stylesheet" href="../css/reset.css">
+<link rel="stylesheet" href="../css/content.css">
+<link rel="stylesheet" href="../css/flag.css">
+<link rel="stylesheet" href="../css/pay.content.css"><!-- (add)20200427 -->
+<script type="text/javascript" src="../js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="../js/jquery.placeholder.min.js"></script>
+<script type="text/javascript" src="../js/slide_slick.js"></script>
+<script type="text/javascript" src="../js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script type="text/javascript" src="../js/collection.fn.1.0.0.js"></script>
+<script type="text/javascript" src="../js/cmd.js"></script>
+<script type="text/javascript" src="../js/pay.cmd.js"></script><!-- (add)20200427 -->
+
+<script>
+$(function(){
+	$('input, textarea').placeholder({customClass:'my-placeholder'});
+});
+</script>
+</head>
+
+<body style="overflow:hidden;">
+
+<!-- (modify)20200427 -->
+<!-- pop_wrap -->
+<div class="pop_wrap" style="width:598px;">
+
+	<!-- 팝업 헤더 -->
+	<div class="pop_head">
+		<h1>결제 시점선택</h1>
+		<a href="#none" onClick="self.close()" class="btn_popclose"><span class="blind">팝업닫기</span></a>
+	</div>
+	<!-- //팝업 헤더 -->
+
+	<!-- 팝업 컨텐츠 -->
+	<div class="pop_container pdb0">
+		<!--<div class="payment_timeChoose_wrap mCustomScrollbar" style="height:404px;">-->
+		<div class="payment_timeChoose_wrap">
+			<!-- 지금결제 -->
+			<div class="payment_timeChoose_item">
+				<div>
+					<div class="label_radioBx">
+						<label class="radioBx" for="">
+							<span><input type="radio" id="" checked><i></i></span>
+						</label>
+					</div>
+					<h2>지금 결제</h2>
+					<div class="right">
+						<span class="tx_paymentNum">112,728 KRW <em>(잔액)</em></span>
+					</div>
+				</div>
+
+				<div class="payment_timeChoose_dscList" style="display:;">
+					<ul>
+						<li>온라인으로 총 금액 결제</li>
+						<li>고객 지정 통화로 결제</li>
+						<li>
+							해당 호텔이 제시한 기간 내에 무료취소 가능
+							<span class="tx_red">(무료취소 가능일자는 현지시간 기준)</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!-- //지금결제 -->
+
+			<hr>
+
+			<!-- 지금결제[결제폼] -->
+			<div id="" class="cboth pdt45" style="display:;">
+				<div class="pay_wrap onlyPC">
+					<div class="pay_block">
+						<!--<div class="tit_wrap">
+							<h3>결제수단</h3>
+						</div>-->
+						<div id="tab_pay" class="tabs_wrap">
+							<div class="tabs_header">
+								<ul class="cboth tabs_header twoTabs">
+									<li class="on"><a href="javascript:void(0)"><span>신용/체크카드<br class="m_disBlock t_disBlock">(개인)</span></a></li>
+									<li><a href="javascript:void(0)"><span>신용카드<br class="m_disBlock t_disBlock">(법인)</span></a></li>
+									<!--(delete)20200422<li><a href="javascript:void(0)"><span>계좌<br class="m_disBlock t_disNone">간편결제</span></a></li>-->
+								</ul>
+							</div>
+							<div class="tabs_body_wrap mHeightCase2">
+								<div class="tabs_body cboth">
+									<!-- 신용/체크카드(개인) -->
+									<div class="tab_cnt">
+
+									</div>
+									<!-- //신용/체크카드(개인) -->
+
+									<hr>
+
+									<!-- 신용카드(법인) -->
+									<div class="tab_cnt">
+										<!--(delete)20200427<div class="info_wrap">
+											<ul>
+												<li><strong>개인용 법인카드</strong>는 신용/체크카드(개인)을 선택하여 결재를 진행 하시길 바랍니다.</li>
+											</ul>
+										</div>-->
+									</div>
+									<!-- //신용카드(법인) -->
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="btn_wrap">
+						<!--<a href="#none" class="btn_pay disable">결제하기</a>-->
+						<a href="#none" class="btn_pay">결제하기</a>
+					</div>
+				</div>
+			</div>
+			<!-- //지금결제[결제폼] -->
+		</div>
+	</div>
+	<!-- //팝업 컨텐츠 -->
+
+</div>
+<!-- //pop_wrap -->
+
+<script>
+$(document).ready(function(){
+
+	$("#tab_pay").tabs({
+		tab:true,
+		animate:false,
+		tabBorderFix:false,
+		tabsWidth:false,
+		speed:300,
+		tabMGT:0,
+		fixContent:false
+	});
+});
+</script>
+<!-- //(modify)20200427 -->
+
+</body>
+</html>

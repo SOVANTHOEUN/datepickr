@@ -2586,15 +2586,10 @@
           _this.datePickerObject.hide('confirm');
           return;
         }
-        console.log("days: " + $("body").append("<div class='test with me'>" + $days + "</div>"));
         if (_this.hasTime) {
           start += ' ' + $times.eq(0).val();
           end += ' ' + $times.eq(1).val();
-          console.log("inside start: " + start);
-          console.log("inside end: " + end);
         }
-        console.log("outside start: " + start);
-        console.log("outside end: " + end);
 
         _this.$inputBegin.val(start);
         _this.$inputEnd.val(end);
@@ -2779,9 +2774,11 @@
   });
   /**=================END PICKER-ONLY-TIME======================== */
 
+  var $thisTarget = null;
   function DatePicker(options, ele) {
     // this.$container = $('.c-datepicker-picker');
     this.$target = ele;
+    $thisTarget = this.$target;
     this.config = $.extend({}, defaultOptions, options);
     this.params = {};
     // 只有时分秒，没有日期
@@ -2800,6 +2797,9 @@
       this.event();
     },
     event: function () {
+      $(window).on('resize', function () {
+        setContainerPos();
+      });
       this.pickerObject.$input.on('click', function () {
         var _this = $(this).data('datepicker');
         if (!_this.pickerObject.$container.data('isShow')) {
@@ -2809,7 +2809,6 @@
           _this.show();
         }
       });
-
       this.pickerObject.$input.on('focus', function () {
         var _this = $(this).data('datepicker');
         _this.initInputVal = this.value;
@@ -3072,9 +3071,19 @@
   });
   // 设置日期选择框位置
   function setContainerPos(_this) {
-    var offset = _this.$target.offset();
-    var height = _this.$target.outerHeight();
-    _this.pickerObject.$container.css({
+    var thisContainer = null;
+    var eleTarget = null;
+    if (!_this) {
+      thisContainer = $('.c-datepicker-picker');
+      eleTarget = $thisTarget;
+    } else {
+      thisContainer = _this.pickerObject.$container;
+      eleTarget = _this.$target;
+    }
+
+    var offset = eleTarget.offset();
+    var height = eleTarget.outerHeight();
+    thisContainer.css({
       top: offset.top + height,
       left: offset.left
     });
