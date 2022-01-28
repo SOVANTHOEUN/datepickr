@@ -966,8 +966,6 @@
          * @param {Function} handler the event handler
          */
         function bind(element, event, handler, options) {
-            console.log("number clicked event: " + event);
-
             if (event instanceof Array)
                 return event.forEach(function (ev) { return bind(element, ev, handler, options); });
             if (element instanceof Array)
@@ -993,7 +991,6 @@
             };
         }
         function triggerChange() {
-            console.log("triggerChange called.")
             triggerEvent("onChange");
         }
         /**
@@ -1502,6 +1499,7 @@
                 get: function () { return self.__hidePrevMonthArrow; },
                 set: function (bool) {
                     if (self.__hidePrevMonthArrow !== bool) {
+                        console.log("called 1")
                         toggleClass(self.prevMonthNav, "flatpickr-disabled", bool);
                         self.__hidePrevMonthArrow = bool;
                     }
@@ -1511,6 +1509,8 @@
                 get: function () { return self.__hideNextMonthArrow; },
                 set: function (bool) {
                     if (self.__hideNextMonthArrow !== bool) {
+                        console.log("called 2")
+
                         toggleClass(self.nextMonthNav, "flatpickr-disabled", bool);
                         self.__hideNextMonthArrow = bool;
                     }
@@ -2645,7 +2645,6 @@
             });
         }
         function toggle(e) {
-            console.log("class open: ", $(".flatpickr-calendar.hasTime").hasClass("open"));
             if (self.isOpen === true)
                 return self.close();
             self.open(e);

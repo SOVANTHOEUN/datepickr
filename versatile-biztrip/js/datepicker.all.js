@@ -112,8 +112,9 @@
       var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
       // Safari 年月模式只能用-,其他Safari、ie用/
       var str = isIE || (isSafari && _this.config.format !== 'YYYY-MM') ? '/' : '-';
-      var reg = new RegExp(_this.splitStr, 'g');
-      var result = !temp ? new Date() : _this.splitStr ? new Date(temp.replace(reg, str)) : new Date(temp);
+      var chkSplitStr = _this.splitStr == "." ? "\\" + _this.splitStr : _this.splitStr;
+      var reg = new RegExp(chkSplitStr, 'g');
+      var result = !temp ? new Date() : chkSplitStr ? new Date(temp.replace(reg, str)) : new Date(temp);
       return result;
     },
     // 范围获取具体年月日
@@ -1274,11 +1275,15 @@
       }
       // 开始值在范围内
       if (isStartBetween) {
+        console.log("1")
+
         index = (startMoment.month() + 1) == startMonth ? 0 : 1;
         $wrap.eq(index).find('td.available').eq(startMoment.date() - 1).addClass('current start-date');
       }
       // 结束值在范围内
       if (isEndBetween) {
+        console.log("2")
+
         index = (endMoment.month() + 1) == startMonth ? 0 : 1;
         $wrap.eq(index).find('td.available').eq(endMoment.date() - 1).addClass('current end-date');
       }
@@ -1290,11 +1295,12 @@
       // 选中的都在
       // 同一个
       if ($start.is($end)) {
-        console.log("called me 1")
+        console.log("3")
+
         $start.addClass('in-range');
         return;
       } else if ($current.length === 2) {
-        console.log("called me 2")
+        console.log("4")
 
         var $startTr = $start.parents('tr');
         var $endTr = $end.parents('tr');
@@ -1334,7 +1340,7 @@
         $startTr.nextAll('tr').find('td.available').addClass('in-range');
         $endTr.prevAll('tr').find('td.available').addClass('in-range');
       } else if ($start.length) {
-        console.log("called me 3")
+        console.log("5")
 
         // 只有开始选中
         var $startTr = $start.parents('tr');
@@ -1344,7 +1350,7 @@
           $wrap.eq(1).find('td.available').addClass('in-range');
         }
       } else if ($end.length) {
-        console.log("called me 4")
+        console.log("6")
 
         // 只有结束选中
         var $endTr = $end.parents('tr');
@@ -2600,8 +2606,6 @@
           start += ' ' + $times.eq(0).val();
           end += ' ' + $times.eq(1).val();
         }
-        console.log("start: " + start);
-        console.log("end: " + end);
 
         _this.$inputBegin.text(start);
         _this.$inputEnd.text(end);

@@ -430,7 +430,8 @@ a {
     padding: 5px;
     color: #333;
     font-weight: 400;
-    border-bottom: 1px solid #ebeef5
+    font-family: "Noto Sans KR";
+    border-bottom: 1px solid #ebeef5;
 }
 
 .c-datepicker-year-table,
@@ -740,7 +741,7 @@ a {
 }
 
 .is-right .c-datepicker-date-range-picker__header-year {
-    margin-left: 129px;
+    margin-left: 118px;
     margin-right: 10px
 }
 
@@ -757,7 +758,9 @@ a {
 }
 
 .c-datepicker-date-range-picker__header {
+    font-family: "Noto Sans KR";
     user-select: none;
+    font-weight: 600;
     font-size: 16px
 }
 
