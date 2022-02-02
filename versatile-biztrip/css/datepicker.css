@@ -408,7 +408,8 @@ a {
 
 .c-datepicker-date-table td.in-range div,
 .c-datepicker-date-table td.in-range div:hover {
-    background-color: #f2f6fc
+    /* background-color: #f2f6fc */
+    background-color: #dae9f5
 }
 
 .c-datepicker-date-table td.start-date div {
@@ -556,7 +557,8 @@ a {
 
 .c-datepicker-date-table td.in-range div,
 .c-datepicker-date-table td.in-range div:hover {
-    background-color: #f2f6fc
+    background-color: #f2f6fc;
+    background-color: #dae9f5;
 }
 
 .c-datepicker-scrollbar__thumb {

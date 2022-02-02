@@ -584,8 +584,13 @@
 	<script type="text/javascript" src="../js/datepicker.all.js"></script>
 	<script>
 		$(document).ready(function () {
+			var date = new Date();
+			var month = date.getMonth() + 1;
+			var day = date.getDate();
+			var mindate = date.getFullYear() + '.' + month + '.' + day;
 			getCurrentDate();
 			$('.cal_srch').datePicker({
+				min: mindate,
 				hasShortcut: true,
 				language: 'ko',
 				format: 'YYYY.MM.DD',

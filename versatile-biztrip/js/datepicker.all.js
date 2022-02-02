@@ -108,6 +108,7 @@
       return API.fillTime(hour) + ':' + API.fillTime(minute) + ':' + API.fillTime(second);
     },
     newDateFixed: function (_this, temp) {
+      console.log("temp: " + temp)
       var isIE = !!window.ActiveXObject || "ActiveXObject" in window;
       var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
       // Safari 年月模式只能用-,其他Safari、ie用/
@@ -1998,11 +1999,13 @@
     },
     // 初始化splitStr，params.format，minJson，maxJson
     initParams: function (_this) {
+      console.log("called initParams: " + _this.config.min)
       _this.splitStr = _this.config.format.replace(/[YMDhms:\s]/g, '').split('')[0];
       _this.params.format = API.getFormat(_this.config.format);
       // 最大值最小值判断
       _this.minJson = _this.config.min ? API.getTimeFormat(moment(API.newDateFixed(_this, _this.config.min))) : false;
       _this.maxJson = _this.config.max ? API.getTimeFormat(moment(API.newDateFixed(_this, _this.config.max))) : false;
+      console.log("_this.minJson: " + _this.minJson);
     },
     renderPicker: function (target, isBlur) {
       var _this = API.getPicker($(target));
