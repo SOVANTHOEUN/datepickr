@@ -579,7 +579,6 @@
 
 	</div>
 	<!--//wrap -->
-	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 	<script type="text/javascript" src="../js/datepicker.all.js"></script>
 	<script>
@@ -588,17 +587,18 @@
 			var month = date.getMonth() + 1;
 			var day = date.getDate();
 			var mindate = date.getFullYear() + '.' + month + '.' + day;
-			getCurrentDate();
+			setCurrentDate();
 			$('.cal_srch').datePicker({
 				min: mindate,
 				hasShortcut: true,
 				language: 'ko',
 				format: 'YYYY.MM.DD',
+				// format: 'YYYY-MM-DD',
 				isRange: true
 			});
 		});
 
-		function getCurrentDate() {
+		function setCurrentDate() {
 			var _dayNames = ['일', '월', '화', '수', '목', '금', '토'];
 			var d = new Date();
 			var month = d.getMonth() + 1;

@@ -129,12 +129,13 @@
     minMaxFill: function (_this, result, index, type) {
       // 填充值
       var val;
+      var chkSplitStr = _this.splitStr == "." ? "\\" + _this.splitStr : _this.splitStr;
       if (type === 'month') {
-        val = result.year + _this.splitStr + API.fillTime(result.month);
+        val = result.year + chkSplitStr + API.fillTime(result.month);
       } else if (type === 'year') {
         val = result.year + '';
       } else {
-        val = result.year + _this.splitStr + API.fillTime(result.month) + _this.splitStr + API.fillTime(result.day);
+        val = result.year + chkSplitStr + API.fillTime(result.month) + chkSplitStr + API.fillTime(result.day);
       }
       if (_this.hasTime) {
         val += ' ' + _this.$container.find('.c-datePicker__input-time').eq(index).val();
@@ -1273,15 +1274,11 @@
       }
       // 开始值在范围内
       if (isStartBetween) {
-        console.log("1")
-
         index = (startMoment.month() + 1) == startMonth ? 0 : 1;
         $wrap.eq(index).find('td.available').eq(startMoment.date() - 1).addClass('current start-date');
       }
       // 结束值在范围内
       if (isEndBetween) {
-        console.log("2")
-
         index = (endMoment.month() + 1) == startMonth ? 0 : 1;
         $wrap.eq(index).find('td.available').eq(endMoment.date() - 1).addClass('current end-date');
       }
@@ -1293,13 +1290,9 @@
       // 选中的都在
       // 同一个
       if ($start.is($end)) {
-        console.log("3")
-
         $start.addClass('in-range');
         return;
       } else if ($current.length === 2) {
-        console.log("4")
-
         var $startTr = $start.parents('tr');
         var $endTr = $end.parents('tr');
         // 同一页
@@ -1338,8 +1331,6 @@
         $startTr.nextAll('tr').find('td.available').addClass('in-range');
         $endTr.prevAll('tr').find('td.available').addClass('in-range');
       } else if ($start.length) {
-        console.log("5")
-
         // 只有开始选中
         var $startTr = $start.parents('tr');
         $start.nextAll('td.available').addClass('in-range');
@@ -1348,8 +1339,6 @@
           $wrap.eq(1).find('td.available').addClass('in-range');
         }
       } else if ($end.length) {
-        console.log("6")
-
         // 只有结束选中
         var $endTr = $end.parents('tr');
         $end.prevAll('td.available').addClass('in-range');
@@ -1358,8 +1347,6 @@
           $wrap.eq(0).find('td.available').addClass('in-range');
         }
       } else {
-        console.log("7")
-
         $wrap.find('td.available').addClass('in-range');
       }
     }
@@ -1934,8 +1921,7 @@
         _this.config.hide.call(_this, 'clickBody');
         _this.datePickerObject.betweenHandle();
       }
-
-    })
+    });
     $('.c-datepicker-picker').hide();
   });
 
@@ -2683,6 +2669,10 @@
       }
       DATEPICKERAPI.setInitVal(this);
       this.$container.show();
+      console.log("yearArr: " + yearArr)
+      console.log("monthArr: " + monthArr)
+      console.log("dayArr: " + dayArr)
+
     },
 
     clear: function () {
@@ -2971,7 +2961,6 @@
         if (!valBegin && !valEnd) {
           return;
         }
-
         var momentBegin = valBegin ? getMoment(_this, valBegin) : false;
         var momentEnd = valEnd ? getMoment(_this, valEnd) : false;
         // 开始>结束=>设置为没改变时的值
@@ -2987,6 +2976,8 @@
         if (hasMax && valEnd && momentEnd.isAfter(maxMoment)) {
           _this.$inputEnd.val(_config.max);
         }
+        // console.log("_this.params.initBeginVal: " + _this.params.initBeginVal)
+        // console.log("_this.params.initEndVal: " + _this.params.initEndVal)
       } else {
         var val = _this.$input.val();
         if (!val) {
@@ -3132,7 +3123,8 @@
       if (dayResult) {
         // 兼容201808变为2018-00-08的情况
         dayResult = API.fixedFill(dayResult);
-        day = dayResult[1] + _this.splitStr + API.fillTime(dayResult[3]) + _this.splitStr + API.fillTime(dayResult[5]);
+        var chkSplitStr = _this.splitStr == "." ? "\\" + _this.splitStr : _this.splitStr;
+        day = dayResult[1] + chkSplitStr + API.fillTime(dayResult[3]) + chkSplitStr + API.fillTime(dayResult[5]);
         $day.val(day);
         if (!_this.config.isRange) {
           $day.trigger('keyup');
