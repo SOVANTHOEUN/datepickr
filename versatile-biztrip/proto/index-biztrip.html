@@ -22,6 +22,7 @@
 	<link rel="stylesheet" href="../css/reset.css">
 	<link rel="stylesheet" href="../css/content.css">
 	<link rel="stylesheet" href="../css/flag.css">
+
 	<link rel="stylesheet" href="../css/datepicker.css">
 	<link rel="stylesheet" href="../css/flatpickr.min.css">
 
@@ -34,7 +35,7 @@
 	<script type="text/javascript" src="../js/common.js"></script>
 
 	<script type="text/javascript" src="../js/flatpickr.4.6.1.js"></script>
-	<script type="text/javascript" src="../js/date-ko-KR.js"></script>
+	<!-- <script type="text/javascript" src="../js/date-ko-KR.js"></script> -->
 	<script type="text/javascript" src="../js/jquery.inputmask.bundle.js"></script>
 
 	<script>
@@ -579,7 +580,8 @@
 
 	</div>
 	<!--//wrap -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script> -->
+	<script type="text/javascript" src="../js/moment.min.js"></script>
 	<script type="text/javascript" src="../js/datepicker.all.js"></script>
 	<script>
 		$(document).ready(function () {
@@ -608,11 +610,11 @@
 			var defaultToday = today.replace(/[.]/g, "-");
 			var tname = new Date(defaultToday);
 			var ftname = _dayNames[tname.getDay()];
-			// $("#checkin").text(today + "(" + common.app.null2void(ftname) + ")");
-			$("#checkin").text(today);
+			$("#checkin").text(today + "(" + common.app.null2void(ftname) + ")");
+			// $("#checkin").text(today);
 			$("#checkin").attr("data-value", defaultToday);
 
-			var tomorrow = new Date(d)
+			var tomorrow = new Date(d);
 			tomorrow.setDate(tomorrow.getDate() + 1);
 			var nday = tomorrow.getDate();
 			//tomorrow.setMonth(tomorrow.getMonth() + 1);
@@ -622,8 +624,8 @@
 			var defaultNextDay = nextDay.replace(/[.]/g, "-");
 			var nname = new Date(defaultNextDay);
 			var fnname = _dayNames[nname.getDay()];
-			// $("#checkout").text(nextDay + "(" + common.app.null2void(fnname) + ")");
-			$("#checkout").text(nextDay);
+			$("#checkout").text(nextDay + "(" + common.app.null2void(fnname) + ")");
+			// $("#checkout").text(nextDay);
 			$("#checkout").attr("data-value", defaultNextDay);
 		}
 	</script>
