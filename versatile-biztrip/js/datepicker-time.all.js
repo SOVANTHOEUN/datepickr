@@ -188,6 +188,7 @@
     },
     // time-second range detection
     judgeTimeRange: function (_this, $day, $time, index) {
+
       index = index || 0;
       var day = $day.val();
       var time = $time.val();
@@ -906,18 +907,22 @@
           var inputDayName1 = "(" + $languageLang[moment().set({ 'year': year, 'month': month, 'date': date }).day()] + ")";
           var inputDayName2 = "(" + $languageLang[moment().set({ 'year': year, 'month': month, 'date': (Number(date) + 1) }).day()] + ")";
 
-          console.log("inputDayName1: " + inputDayName1);
-          console.log("inputDayName2: " + inputDayName2);
+          // console.log("inputDayName1: " + inputDayName1);
+          // console.log("inputDayName2: " + inputDayName2);
 
           $day.eq(0).val(inputVal);
           $day.eq(1).val(inputNextVal);
           $time.eq(0).val(_this.picker.timeMin);
           $time.eq(1).val(_this.picker.timeMax);
-          _this.picker.$inputBegin.text(inputVal + inputDayName1);
-          _this.picker.$inputEnd.text(inputNextVal + inputDayName2);
+
+          console.log("day1: " + _this.picker.timeMin);
+          console.log("day2: " + _this.picker.timeMax);
+
+          _this.picker.$inputBegin.text(inputVal + inputDayName1 + " " + _this.picker.timeMin);
+          _this.picker.$inputEnd.text(inputNextVal + inputDayName2 + " " + _this.picker.timeMax);
           _this.current = 1;
         } else if (_this.current == 1) {
-          console.log("call return")
+          console.log("call return");
           // Pick two
           $target.addClass('current');
           var existDate = $day.eq(0).val();
@@ -941,8 +946,8 @@
               existDayName1 = tempName;
             }
             _this.current = 2;
-            _this.picker.$inputBegin.text(existDate + existDayName1);
-            _this.picker.$inputEnd.text(inputVal + existDayName2);
+            _this.picker.$inputBegin.text(existDate + existDayName1 + " " + _this.picker.timeMin);
+            _this.picker.$inputEnd.text(inputVal + existDayName2 + "" + _this.picker.timeMax);
             // close autoclose function
             // _this.picker.datePickerObject.hide('choose');
           } else {
@@ -960,6 +965,7 @@
 
         if (_this.current) {
           var index = _this.current - 1;
+          console.log("this is time: " + _this.picker.$container.find('.c-datePicker__input-time').eq(index).val());
           API.judgeTimeRange(_this.picker, _this.picker.$container.find('.c-datePicker__input-day').eq(index), _this.picker.$container.find('.c-datePicker__input-time').eq(index), index);
         }
       }
@@ -2590,6 +2596,7 @@
 
       // Click OK
       this.$container.on('click', '.c-datepicker-picker__link-btn.confirm', function () {
+        console.log("confirm button");
         var _this = API.getPicker($(this));
         var $days = _this.$container.find('.c-datePicker__input-day');
         var $times = _this.$container.find('.c-datePicker__input-time');
@@ -2668,7 +2675,6 @@
       });
     },
     show: function () {
-      console.log("call show")
       this.fillDefault();
       var dataFormat = [];
       dataFormat[0] = API.getRangeTimeFormat(this, this.$input.eq(0));

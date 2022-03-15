@@ -131,88 +131,15 @@
 									class="date_start">
 									<i class="ic_cal" style="top: 14px;left: 22px;">Calendar</i>
 									<strong style="padding: 1px 50px 0px;">시작일시</strong>
-									<span id="start_dt" class="tx_date" data-value="0000-00-00"
-										style="cursor: pointer;padding: 0 0 0 50px;">
-										<span id="spanStartDt" class="render"
-											data-value="2022-03-15">2022.03.15(화)</span>
-										<select id="start_hour">
-											<option value="00">00</option>
-											<option value="01">01</option>
-											<option value="02">02</option>
-											<option value="03">03</option>
-											<option value="04">04</option>
-											<option value="05">05</option>
-											<option value="06">06</option>
-											<option value="07">07</option>
-											<option value="08">08</option>
-											<option value="09">09</option>
-											<option value="10">10</option>
-											<option value="11">11</option>
-											<option value="12">12</option>
-											<option value="13">13</option>
-											<option value="14">14</option>
-											<option value="15">15</option>
-											<option value="16">16</option>
-											<option value="17">17</option>
-											<option value="18">18</option>
-											<option value="19">19</option>
-											<option value="20">20</option>
-											<option value="21">21</option>
-											<option value="22">22</option>
-											<option value="23">23</option>
-											<option value="24">24</option>
-										</select>
-										시
-										<select id="start_min">
-											<option value="00">00</option>
-											<option value="15">15</option>
-											<option value="30">30</option>
-											<option value="45">45</option>
-										</select>
-										분
-									</span>
+									<span id="checkin" class="render tx_date"
+										style="cursor: pointer;padding: 0 0 0 50px;"
+										data-value="0000-00-00 00:00">0000.00.00(화) 00:00</span>
 								</a>
 								<a href="javascript:void(0)" id="btnCalendar1" class="date_end">
 									<strong>종료일시</strong>
-									<span id="end_dt" class="tx_date" data-value="0000-00-00">
-										<span id="spanEndtDt" class="render"
-											data-value="2022-03-16">2022.03.16(수)</span>
-										<select id="end_hour">
-											<option value="00">00</option>
-											<option value="01">01</option>
-											<option value="02">02</option>
-											<option value="03">03</option>
-											<option value="04">04</option>
-											<option value="05">05</option>
-											<option value="06">06</option>
-											<option value="07">07</option>
-											<option value="08">08</option>
-											<option value="09">09</option>
-											<option value="10">10</option>
-											<option value="11">11</option>
-											<option value="12">12</option>
-											<option value="13">13</option>
-											<option value="14">14</option>
-											<option value="15">15</option>
-											<option value="16">16</option>
-											<option value="17">17</option>
-											<option value="18">18</option>
-											<option value="19">19</option>
-											<option value="20">20</option>
-											<option value="21">21</option>
-											<option value="22">22</option>
-											<option value="23">23</option>
-											<option value="24">24</option>
-										</select>
-										시
-										<select id="start_min">
-											<option value="00">00</option>
-											<option value="15">15</option>
-											<option value="30">30</option>
-											<option value="45">45</option>
-										</select>
-										분
-									</span>
+									<span id="checkout" class="render tx_date"
+										data-value="0000-00-00 00:00">0000.00.00(수)
+										00:00</span>
 								</a>
 							</div>
 						</li>
@@ -690,7 +617,8 @@
 			var defaultToday = today.replace(/[.]/g, "-");
 			var tname = new Date(defaultToday);
 			var ftname = _dayNames[tname.getDay()];
-			$("#checkin").text(today + "(" + common.app.null2void(ftname) + ")");
+			var sTime = " 00:00";
+			$("#checkin").text(today + "(" + common.app.null2void(ftname) + ")" + sTime);
 			// $("#checkin").text(today);
 			$("#checkin").attr("data-value", defaultToday);
 
@@ -704,7 +632,8 @@
 			var defaultNextDay = nextDay.replace(/[.]/g, "-");
 			var nname = new Date(defaultNextDay);
 			var fnname = _dayNames[nname.getDay()];
-			$("#checkout").text(nextDay + "(" + common.app.null2void(fnname) + ")");
+			var eTime = " 00:00";
+			$("#checkout").text(nextDay + "(" + common.app.null2void(fnname) + ")" + eTime);
 			// $("#checkout").text(nextDay);
 			$("#checkout").attr("data-value", defaultNextDay);
 		}
