@@ -918,8 +918,8 @@
           console.log("day1: " + _this.picker.timeMin);
           console.log("day2: " + _this.picker.timeMax);
 
-          _this.picker.$inputBegin.text(inputVal + inputDayName1 + " " + _this.picker.timeMin);
-          _this.picker.$inputEnd.text(inputNextVal + inputDayName2 + " " + _this.picker.timeMax);
+          _this.picker.$inputBegin.text(inputVal + inputDayName1);
+          _this.picker.$inputEnd.text(inputNextVal + inputDayName2);
           _this.current = 1;
         } else if (_this.current == 1) {
           console.log("call return");
@@ -946,8 +946,8 @@
               existDayName1 = tempName;
             }
             _this.current = 2;
-            _this.picker.$inputBegin.text(existDate + existDayName1 + " " + _this.picker.timeMin);
-            _this.picker.$inputEnd.text(inputVal + existDayName2 + "" + _this.picker.timeMax);
+            _this.picker.$inputBegin.text(existDate + existDayName1);
+            _this.picker.$inputEnd.text(inputVal + existDayName2);
             // close autoclose function
             // _this.picker.datePickerObject.hide('choose');
           } else {
@@ -965,7 +965,6 @@
 
         if (_this.current) {
           var index = _this.current - 1;
-          console.log("this is time: " + _this.picker.$container.find('.c-datePicker__input-time').eq(index).val());
           API.judgeTimeRange(_this.picker, _this.picker.$container.find('.c-datePicker__input-day').eq(index), _this.picker.$container.find('.c-datePicker__input-time').eq(index), index);
         }
       }
@@ -2796,11 +2795,13 @@
 
   var $thisTarget = null;
   var $inputContainer = null;
+  var $preventClass = null;
   function DatePicker(options, ele) {
     // this.$container = $('.c-datepicker-picker');
     this.$target = ele;
     $thisTarget = this.$target;
     this.config = $.extend({}, defaultOptions, options);
+    $preventClass = this.config.preventClass;
     this.params = {};
     // Time and seconds, no date
     this.onlyTime = API.onlytimeReg(this.config.format);
@@ -2824,11 +2825,16 @@
       });
       this.pickerObject.$target.on('click', function (event) {
         var _this = $inputContainer.data('datepicker');
-        if (!_this.pickerObject.$container.data('isShow')) {
-          // Reset Status
-          $('.c-datepicker-picker').data('isShow', false);
-          _this.pickerObject.$container.data('isShow', true);
-          _this.show();
+        var targetClass = event.target.className;
+        if ($preventClass != targetClass) {
+          if (!_this.pickerObject.$container.data('isShow')) {
+            // Reset Status
+            $('.c-datepicker-picker').data('isShow', false);
+            _this.pickerObject.$container.data('isShow', true);
+            _this.show();
+          } else {
+            _this.hide();
+          }
         } else {
           _this.hide();
         }
